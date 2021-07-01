@@ -11,10 +11,15 @@ namespace Cryptography1
     {
         static void Main(string[] args)
         {
+          
 
             // Generate new Keys
-            PrivateKey privateKey = new PrivateKey();
-            //PrivateKey privateKey = PrivateKey.fromString(, "secp256k1");
+            //PrivateKey privateKey = new PrivateKey();
+           
+            //Using Privatekey from PEM
+
+            PrivateKey privateKey = PrivateKey.fromPem("-----BEGIN EC PARAMETERS-----\nBgUrgQQACg==\n-----END EC PARAMETERS-----\n-----BEGIN EC PRIVATE KEY-----\nMHICAQEEICU1BBPS/zio/Kt0f/ylwLPLeeVSoFrahlhYEtyyW7W3oAcGBSuBBAAKoUIABGr+/F1ZYPev758Rnu0eQa0AwMKx/M03hULURWqwinWePQz2Jcz48vlplyyItdNQfItaTULe0ePS2UZ2DGWZrzM=\n-----END EC PRIVATE KEY-----\n");
+
             PublicKey publicKey = privateKey.publicKey();
 
             string message = "EKA|v0.1|John Doe|Z4385097|M|02-01-1988|119334006|Nasopharyngeal Swab|2021-05-25T16:45:32.729+08:00|94531-1|SARS-COV2-2019 RT-PCR|260385009|Negative|L01|C01";
